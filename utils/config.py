@@ -11,3 +11,5 @@ ARXIV_DIR = DATA_DIR / "arxiv"
 UPLOADS_DIR = DATA_DIR / "uploads"
 
 MEDICAL_DB_DIR = "vector_db/medical_db"
+KNOWLEDGE_DB_DIR = VECTOR_DB_DIR / "knowledge_db"
+
