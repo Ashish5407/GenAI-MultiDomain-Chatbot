@@ -7,7 +7,9 @@ def load_medquad():
     documents = []
 
     for root_dir, _, files in os.walk(MEDQUAD_DIR):
+        
         for file in files:
+            
             if file.endswith(".xml"):
                 tree = ET.parse(os.path.join(root_dir, file))
                 root = tree.getroot()

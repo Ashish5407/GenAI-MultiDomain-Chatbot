@@ -1,29 +1,50 @@
-
-# Virtual environment
+ 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+ 
+# Virtual Environments
 venv/
 env/
 .venv/
-
-# Environment variables
+ENV/
+ 
+# Environment Variables
 .env
-
-# Python cache
-__pycache__/
-*.pyc
-
-# IDE files
+ 
+# VS Code
 .vscode/
+ 
+# PyCharm
 .idea/
 
-# Generated vector databases
+# Logs
+logs/
+*.log
+ 
+# Uploads
+data/uploads/
+ 
+# Vector Databases
 vector_db/
-faiss_index/
-chroma_db/
+ 
+# Build
+build/
+dist/
+*.egg-info/
+ 
+# Jupyter
+.ipynb_checkpoints/
 
-# Generated model/database files
-*.pkl
-*.db
+# Streamlit
+.streamlit/secrets.toml
 
-# OS files
+# OS Files
 .DS_Store
 Thumbs.db
+Desktop.ini
+
+# Git
+.git/
