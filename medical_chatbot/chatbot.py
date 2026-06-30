@@ -1,16 +1,8 @@
 
-import os
-import google.generativeai as genai
-from dotenv import load_dotenv
 from medical_chatbot.retrieval import retrieve_answer
 from medical_chatbot.medical_ner import extract_entities
 from knowledge_base.retrieval import retrieve_knowledge
-
-load_dotenv()
-
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
-model = genai.GenerativeModel("gemini-2.5-flash")
+from utils.gemini import model
 
 
 def medical_chatbot(query):
@@ -24,16 +16,19 @@ def medical_chatbot(query):
         ]
     )
     
-    knowledge_context = "\n\n".join(
-        [
-            doc.page_content
-            for doc in knowledge_results
-        ]
-    )
+    knowledge_context = ""
+
+    if knowledge_results:
+        knowledge_context = "\n\n".join(
+            [
+                doc.page_content
+                for doc in knowledge_results
+            ]
+        )
     
     context = f"""
     Medical Database:{medical_context}
-    Additional Knowledge:{knowledge_context}"""
+    Additional Knowledge:{knowledge_context} """
     
     entities = extract_entities(query)
 
@@ -43,12 +38,15 @@ def medical_chatbot(query):
     Context: {context}
     User Question: {query}
 
-                Provide a clear and concise answer.
-                If the answer is not available in the context, say you don't know. """
+    Provide a clear and concise answer.
+    If the answer is not available in the context, say you don't know. """
 
-    response = model.generate_content(prompt)
+    try:
+        response = model.generate_content(prompt)
+        return response.text
 
-    return response.text
+    except Exception as e:
+        return f"Error: {str(e)}"
 
 
 if __name__ == "__main__":
