@@ -25,20 +25,20 @@ RESEARCH_DB_DIR = VECTOR_DB_DIR / "research_db"
 
 # Supported File Types
 
-SUPPORTED_IMAGES = {
+SUPPORTED_IMAGES = IMAGE_EXTENSIONS = {
     "jpg",
     "jpeg",
     "png",
     "webp"
 }
 
-SUPPORTED_DOCUMENTS = {
+SUPPORTED_DOCUMENTS = DOCUMENT_EXTENSIONS = {
     "pdf",
     "docx",
     "txt"
 }
 
-SUPPORTED_SPREADSHEETS = {
+SUPPORTED_SPREADSHEETS = SPREADSHEET_EXTENSIONS = {
     "csv",
     "xlsx"
 }
