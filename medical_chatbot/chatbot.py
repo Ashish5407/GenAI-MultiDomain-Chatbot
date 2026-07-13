@@ -3,6 +3,7 @@ from medical_chatbot.retrieval import retrieve_answer
 from medical_chatbot.medical_ner import extract_entities
 from knowledge_base.retrieval import retrieve_knowledge
 from utils.gemini import model
+from utils.logger import logger
 
 
 def medical_chatbot(query):
@@ -36,6 +37,7 @@ def medical_chatbot(query):
                 Use the following context to answer the user's question.
 
     Context: {context}
+    Extracted Medical Entities: {entities}
     User Question: {query}
 
     Provide a clear and concise answer.
@@ -46,6 +48,7 @@ def medical_chatbot(query):
         return response.text
 
     except Exception as e:
+        logger.error(f"Medical chatbot failed to generate a response: {e}")
         return f"Error: {str(e)}"
 
 

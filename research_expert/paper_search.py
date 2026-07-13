@@ -13,6 +13,7 @@ STOP_WORDS = {
     "with", "what", "how"
 }
 
+
 def load_papers():
     papers = []
 
@@ -21,6 +22,7 @@ def load_papers():
             papers.append(json.loads(line))
 
     return papers
+
 
 def get_papers():
     global PAPERS

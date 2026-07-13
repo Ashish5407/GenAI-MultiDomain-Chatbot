@@ -15,6 +15,8 @@ ARXIV_DIR = DATA_DIR / "arxiv"
 UPLOADS_DIR = DATA_DIR / "uploads"
 IMAGE_UPLOADS_DIR = UPLOADS_DIR / "images"
 
+LOGS_DIR = DATA_DIR / "logs"
+
 
 # Vector Databases
 
@@ -60,5 +62,6 @@ for folder in [
     MEDICAL_DB_DIR,
     KNOWLEDGE_DB_DIR,
     RESEARCH_DB_DIR,
+    LOGS_DIR,
 ]:
     folder.mkdir(parents=True, exist_ok=True)

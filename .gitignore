@@ -1,50 +1,62 @@
- 
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
- 
+
 # Virtual Environments
 venv/
 env/
 .venv/
 ENV/
- 
+
 # Environment Variables
 .env
- 
+
 # VS Code
 .vscode/
- 
+
 # PyCharm
 .idea/
 
 # Logs
 logs/
 *.log
- 
-# Uploads
-data/uploads/
- 
-# Vector Databases
-vector_db/
- 
-# Build
-build/
-dist/
-*.egg-info/
- 
-# Jupyter
-.ipynb_checkpoints/
+
+# Chat history (personal / runtime data)
+data/history/*
+!data/history/.gitkeep
+
+# Uploaded files (runtime data)
+data/uploads/*
+!data/uploads/.gitkeep
+
+# Large datasets (download separately, see README)
+data/MedQuAD/*
+!data/MedQuAD/.gitkeep
+data/arxiv/*
+!data/arxiv/.gitkeep
+
+# Vector databases (generated locally via embeddings.py / updater.py)
+*.faiss
+*.pkl
+
+# NLTK downloaded data
+nltk_data/
 
 # Streamlit
 .streamlit/secrets.toml
 
-# OS Files
+# Jupyter
+.ipynb_checkpoints/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# OS files
 .DS_Store
 Thumbs.db
 Desktop.ini
-
-# Git
-.git/
