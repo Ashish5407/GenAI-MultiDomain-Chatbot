@@ -27,19 +27,19 @@ manually.
 
 ## Project Structure
 
-genAi_chatbot/
-├── app.py                   # Streamlit UI and entry point
-├── router/                  # Classifies intent and routes to the right module
-├── medical_chatbot/         # Medical Q&A (MedQuAD + FAISS)
-├── knowledge_base/          # Custom knowledge base (files / websites / YouTube)
-├── research_expert/         # arXiv paper search, summaries, explanations
-├── multimodal/              # Document / spreadsheet / image understanding
-├── multilingual/            # Language detection + translated replies
-├── sentiment/               # Sentiment analysis
-├── utils/                   # Shared config, logger, chat memory, Gemini client
-├── data/                    # Datasets, uploads, chat history (see below)
-├── vector_db/               # Generated FAISS indexes (not committed)
-└── requirements.txt
+genAi_chatbot/ <br>
+├── app.py                   # Streamlit UI and entry point <br>
+├── router/                  # Classifies intent and routes to the right module <br>
+├── medical_chatbot/         # Medical Q&A (MedQuAD + FAISS) <br>
+├── knowledge_base/          # Custom knowledge base (files / websites / YouTube) <br>
+├── research_expert/         # arXiv paper search, summaries, explanations <br>
+├── multimodal/              # Document / spreadsheet / image understanding <br>
+├── multilingual/            # Language detection + translated replies <br>
+├── sentiment/               # Sentiment analysis <br>
+├── utils/                   # Shared config, logger, chat memory, Gemini client <br>
+├── data/                    # Datasets, uploads, chat history (see below) <br>
+├── vector_db/               # Generated FAISS indexes (not committed) <br>
+└── requirements.txt <br>
 
 ## Setup
 
