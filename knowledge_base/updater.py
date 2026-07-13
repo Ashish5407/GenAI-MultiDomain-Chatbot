@@ -5,6 +5,7 @@ from langchain_community.vectorstores import FAISS
 from medical_chatbot.embeddings import get_embedding_model
 from knowledge_base.source_loader import load_source
 from utils.config import UPLOADS_DIR, KNOWLEDGE_DB_DIR
+from utils.logger import logger
 
 
 def update_knowledge_base(source):
@@ -31,7 +32,7 @@ def update_knowledge_base(source):
         source_name = destination.name
 
     if not docs:
-        print("No documents found.")
+        logger.warning(f"No documents found for source: {source_name}")
         return
 
     splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
@@ -49,4 +50,4 @@ def update_knowledge_base(source):
 
     db.save_local(str(KNOWLEDGE_DB_DIR))
 
-    print(f"Knowledge base updated from {source_name}")
+    logger.info(f"Knowledge base updated from {source_name}")
