@@ -1,0 +1,39 @@
+
+# Web app
+streamlit
+
+# LLM
+google-generativeai
+python-dotenv
+
+# LangChain (knowledge base ingestion + retrieval)
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+langchain-huggingface
+
+# Loaders used by knowledge_base/source_loader.py
+unstructured
+youtube-transcript-api
+
+# NLP / language
+langdetect
+nltk
+
+# Embeddings & vector search
+sentence-transformers
+faiss-cpu
+
+# File handling (multimodal + knowledge base)
+PyMuPDF
+python-docx
+pandas
+openpyxl
+Pillow
+
+# Core utilities
+numpy
+requests
+beautifulsoup4
+lxml
